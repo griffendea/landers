@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Debt Relief Program — Qualification Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #17233d;
+    --navy-deep: #0e1729;
+    --paper: #f6f4ee;
+    --paper-card: #ffffff;
+    --gold: #b6893f;
+    --gold-soft: #e9dcbd;
+    --green: #2f6f52;
+    --ink: #1a1f2b;
+    --ink-soft: #5b6272;
+    --line: #dfdccf;
+    --danger-bg: #fdf1e8;
+    --danger-line: #e3b98c;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:96px; /* space for sticky CTA on mobile */
+  }
+
+  .eyebrow-bar{
+    background:var(--navy-deep);
+    color:#cfd6e6;
+    font-size:12.5px;
+    letter-spacing:.08em;
+    text-align:center;
+    padding:9px 16px;
+    font-weight:500;
+  }
+  .eyebrow-bar strong{color:#fff; font-weight:600;}
+
+  .progress-track{
+    height:4px;
+    width:100%;
+    background:var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg, var(--gold) 0%, var(--green) 100%);
+    transition:width .6s ease;
+  }
+
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:36px 20px 0;
+  }
+
+  header.hero{
+    text-align:center;
+    margin-bottom:8px;
+  }
+
+  .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--green);
+    background:#e9f2ec;
+    border:1px solid #cfe3d7;
+    padding:6px 14px;
+    border-radius:100px;
+    margin-bottom:22px;
+  }
+  .kicker svg{width:14px;height:14px;flex-shrink:0;}
+
+  h1{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    font-size:clamp(30px, 5.6vw, 42px);
+    line-height:1.14;
+    letter-spacing:-.01em;
+    margin:0 0 16px;
+    color:var(--navy-deep);
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+
+  .subhead{
+    font-size:16.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin:0 auto 34px;
+  }
+
+  /* Checklist */
+  .checklist{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:28px;
+  }
+
+  .item{
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 20px 20px 18px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    opacity:0;
+    transform:translateY(10px);
+    animation:rise .5s ease forwards;
+    box-shadow:0 1px 2px rgba(23,35,61,.03);
+  }
+  .item:nth-child(1){animation-delay:.15s;}
+  .item:nth-child(2){animation-delay:.35s;}
+  .item:nth-child(3){animation-delay:.55s;}
+
+  @keyframes rise{
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .check-badge{
+    flex-shrink:0;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--green);
+    display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .check-badge svg{width:16px;height:16px;stroke:#fff;}
+
+  .item-title{
+    font-weight:600;
+    font-size:16px;
+    color:var(--navy-deep);
+    margin:0 0 4px;
+  }
+  .item-body{
+    font-size:14.5px;
+    line-height:1.5;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* Critical / behavioral callout — visually distinct from criteria */
+  .critical{
+    background:var(--danger-bg);
+    border:1.5px solid var(--danger-line);
+    border-radius:14px;
+    padding:22px 20px;
+    margin-bottom:30px;
+    opacity:0;
+    transform:translateY(10px);
+    animation:rise .5s ease forwards;
+    animation-delay:.8s;
+    position:relative;
+  }
+  .critical-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:8px;
+  }
+  .phone-badge{
+    flex-shrink:0;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(182,137,63,.35);}
+    50%{box-shadow:0 0 0 8px rgba(182,137,63,0);}
+  }
+  .phone-badge svg{width:18px;height:18px;stroke:#fff;}
+
+  .critical-title{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    font-size:19px;
+    color:var(--navy-deep);
+    margin:0;
+  }
+  .critical-body{
+    font-size:14.5px;
+    line-height:1.58;
+    color:#4a3a28;
+    margin:0;
+  }
+  .critical-body strong{color:var(--navy-deep);}
+
+  /* Confirm box */
+  .confirm-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 16px;
+    margin-bottom:22px;
+    font-size:14px;
+    color:var(--ink-soft);
+    opacity:0;
+    animation:rise .5s ease forwards;
+    animation-delay:1s;
+  }
+  .confirm-row input{
+    margin-top:3px;
+    width:17px;height:17px;
+    accent-color:var(--green);
+    flex-shrink:0;
+  }
+  .confirm-row label{cursor:pointer;}
+  .confirm-row strong{color:var(--ink);}
+
+  /* CTA */
+  .cta-wrap{
+    text-align:center;
+    opacity:0;
+    animation:rise .5s ease forwards;
+    animation-delay:1.15s;
+  }
+
+  .cta-btn{
+    display:block;
+    width:100%;
+    max-width:440px;
+    margin:0 auto;
+    background:var(--green);
+    color:#fff;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    border:none;
+    border-radius:12px;
+    padding:18px 24px;
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 20px -6px rgba(47,111,82,.45);
+  }
+  .cta-btn:hover{background:#275e46; transform:translateY(-1px);}
+  .cta-btn:disabled{
+    background:#a9b0be;
+    box-shadow:none;
+    cursor:not-allowed;
+    transform:none;
+  }
+  .cta-sub{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+
+  footer{
+    max-width:640px;
+    margin:44px auto 0;
+    padding:0 20px 30px;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  footer p{
+    font-size:11.5px;
+    line-height:1.6;
+    color:#8a90a0;
+    margin:0 0 10px;
+  }
+
+  /* Sticky mobile CTA */
+  .sticky-cta{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    background:rgba(246,244,238,.92);
+    backdrop-filter:blur(6px);
+    border-top:1px solid var(--line);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    display:none;
+    z-index:20;
+  }
+  .sticky-cta button{
+    width:100%;
+    background:var(--green);
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:15px;
+    font-weight:600;
+    font-size:15.5px;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  .sticky-cta button:disabled{background:#a9b0be;}
+
+  @media (max-width:560px){
+    .sticky-cta{display:block;}
+    .cta-wrap .cta-btn{display:none;} /* avoid duplicate CTA on small screens */
+    .cta-wrap .cta-sub{margin-top:0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+    .item, .critical, .confirm-row, .cta-wrap{opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="eyebrow-bar">Sponsored Program Overview — <strong>Read Before You Apply</strong></div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="wrap">
+    <header class="hero">
+      <span class="kicker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        3 QUALIFICATION CRITERIA
+      </span>
+      <h1>What you need to know to get approved for the <em>2026 Debt Relief Program</em></h1>
+      <p class="subhead">This program isn't open to everyone. Review the requirements below — the last one is the one people miss.</p>
+    </header>
+
+    <div class="checklist">
+      <div class="item">
+        <div class="check-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <p class="item-title">1. Total debt of $25,000 or more</p>
+          <p class="item-body">Programs are built around meaningful debt loads. If your combined balances are under $25,000, you likely won't qualify for this particular program.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="check-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <p class="item-title">2. Debt must be unsecured</p>
+          <p class="item-body">Credit cards, medical bills, personal loans, and collections generally qualify. Mortgages, auto loans, and other secured debt do not.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="critical">
+      <div class="critical-head">
+        <div class="phone-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <p class="critical-title">3. You must answer the phone</p>
+      </div>
+      <p class="critical-body">This is the step most people get wrong. Once you submit your information, a specialist will call you — <strong>call volume for this program is high, and if you miss the call, it can be very hard to get reconnected.</strong> Keep your phone nearby and answer any call from an unfamiliar number over the next few minutes.</p>
+    </div>
+
+    <div class="confirm-row">
+      <input type="checkbox" id="confirmCheck">
+      <label for="confirmCheck"><strong>I understand</strong> — I meet the criteria above, and I will answer my phone when a specialist calls.</label>
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta-btn" id="ctaBtn" disabled>See If I Qualify</button>
+      <p class="cta-sub">Takes about 60 seconds. No obligation to enroll.</p>
+    </div>
+
+    <footer>
+      <p>This page provides general information about unsecured debt relief programs and is not a guarantee of approval, savings, or program terms. Actual qualification, terms, and outcomes are determined by the program provider and depend on your individual financial situation. Debt settlement may negatively affect your credit and may involve tax consequences; not all debts are eligible. This is not legal, tax, or credit counseling advice.</p>
+    </footer>
+  </div>
+
+  <div class="sticky-cta">
+    <button id="ctaBtnSticky" disabled>See If I Qualify</button>
+  </div>
+
+<script>
+  // Progress bar fills as the checklist reveals, reinforcing "you're being evaluated"
+  const fill = document.getElementById('progressFill');
+  requestAnimationFrame(()=> setTimeout(()=> fill.style.width='40%', 100));
+  setTimeout(()=> fill.style.width='70%', 700);
+  setTimeout(()=> fill.style.width='100%', 1400);
+
+  // CTA unlocks only after the visitor checks the confirmation box —
+  // this is the mechanism that actually filters for phone-pickup intent.
+  const confirmCheck = document.getElementById('confirmCheck');
+  const ctaBtn = document.getElementById('ctaBtn');
+  const ctaBtnSticky = document.getElementById('ctaBtnSticky');
+
+  confirmCheck.addEventListener('change', () => {
+    const enabled = confirmCheck.checked;
+    ctaBtn.disabled = !enabled;
+    ctaBtnSticky.disabled = !enabled;
+  });
+
+  function goToOffer(){
+    if(confirmCheck.checked){
+      window.location.href = "https://path.sharpdebt.com/click";
+    }
+  }
+  ctaBtn.addEventListener('click', goToOffer);
+  ctaBtnSticky.addEventListener('click', goToOffer);
+</script>
+
+</body>
+</html>
