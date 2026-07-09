@@ -36,7 +36,7 @@ body {
   margin-right: auto;
 }
 
-/* ── TOP BAR ── */
+/* TOP BAR */
 .topbar {
   background: var(--red);
   text-align: center;
@@ -48,7 +48,7 @@ body {
   color: #fff;
 }
 
-/* ── SITE HEADER ── */
+/* SITE HEADER */
 .site-header {
   display: flex;
   align-items: center;
@@ -61,7 +61,6 @@ body {
   font-size: 18px;
   font-weight: 800;
   color: #fff;
-  
 }
 .site-logo span { color: var(--red); }
 .site-tag {
@@ -72,9 +71,9 @@ body {
   color: var(--muted);
 }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
-  padding: 48px 20px 24px;
+  padding: 48px 20px 0;
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -106,7 +105,6 @@ body {
   font-size: clamp(30px, 6vw, 52px);
   font-weight: 800;
   line-height: 1.1;
-  
   color: #fff;
   margin-bottom: 20px;
 }
@@ -116,12 +114,12 @@ body {
   font-size: 18px;
   color: #aaa;
   line-height: 1.65;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   max-width: 580px;
 }
 .hero-sub strong { color: #fff; }
 
-/* ── STORY CARD ── */
+/* STORY CARD */
 .story-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -153,7 +151,7 @@ body {
   margin-bottom: 0;
 }
 
-/* ── CTA BUTTON ── */
+/* CTA BUTTON */
 .cta-wrap {
   padding: 0 20px;
   max-width: 720px;
@@ -174,6 +172,7 @@ body {
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
   text-transform: uppercase;
+  text-decoration: none;
   text-align: center;
 }
 .cta-btn:hover { background: #dc2626; }
@@ -190,7 +189,7 @@ body {
 }
 .cta-sub-row span::before { content: '✓ '; color: var(--green); }
 
-/* ── SECTION HEADER ── */
+/* SECTION HEADER */
 .section-header {
   padding: 0 20px 28px;
   border-bottom: 1px solid var(--border);
@@ -208,16 +207,13 @@ body {
   font-size: clamp(22px, 4vw, 30px);
   font-weight: 800;
   color: #fff;
-  
   line-height: 1.2;
 }
 
-/* ── LIST ITEM ── */
+/* LIST ITEM */
 .item {
   padding: 44px 20px;
-  border-bottom: 1px solid var(--border);
 }
-
 .item-counter-row {
   display: flex;
   align-items: center;
@@ -237,77 +233,36 @@ body {
 }
 .item-num.gold { background: var(--yellow); color: #111; }
 .item-counter-line { flex: 1; height: 1px; background: var(--border); }
-
 .item h2 {
   font-family: 'Oswald', sans-serif;
   font-size: clamp(22px, 4vw, 30px);
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
-  
   margin-bottom: 18px;
 }
 .item h2 em { font-style: normal; color: var(--red); }
-
-.item-body {
-  font-size: 17px;
-  color: #bbb;
-  line-height: 1.78;
-}
+.item-body { font-size: 17px; color: #bbb; line-height: 1.78; }
 .item-body p { margin-bottom: 16px; }
 .item-body p:last-child { margin-bottom: 0; }
 .item-body strong { color: #fff; font-weight: 600; }
 
-/* ── VIZ BLOCK (bars) ── */
+/* VIZ BLOCK */
 .viz {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 24px 22px;
   margin: 24px 0;
 }
-.viz-label-row {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
+.viz-label-row { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
 .viz-row { margin-bottom: 18px; }
-.viz-row-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-}
+.viz-row-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
 .viz-row-head .vl { font-size: 14px; font-weight: 600; color: #ddd; }
-.viz-row-head .vv {
-  font-size: 30px;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-  flex-shrink: 0;
-}
+.viz-row-head .vv { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; flex-shrink: 0; }
 .viz-row-head .vv.good { color: var(--green); }
 .viz-row-head .vv.bad { color: var(--red); }
-.viz-track {
-  height: 38px;
-  background: var(--border);
-  overflow: hidden;
-}
-.viz-bar {
-  height: 100%;
-  width: 0;
-  display: flex;
-  align-items: center;
-  padding-left: 12px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  transition: width 1.4s cubic-bezier(.4,0,.2,1);
-}
+.viz-track { height: 38px; background: var(--border); overflow: hidden; }
+.viz-bar { height: 100%; width: 0; display: flex; align-items: center; padding-left: 12px; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.03em; white-space: nowrap; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
 .viz-bar.good { background: var(--green); }
 .viz-bar.bad { background: var(--red); }
 .viz-note { font-size: 12px; color: var(--muted); margin-top: 5px; font-weight: 500; }
@@ -331,70 +286,23 @@ body {
   gap: 16px;
 }
 .viz-boom .boom-text { font-size: 14px; font-weight: 700; color: #111; line-height: 1.5; }
-.viz-boom .boom-num {
-  font-family: 'Oswald', sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  color: #111;
-  line-height: 1;
-  flex-shrink: 0;
-  text-align: right;
-}
+.viz-boom .boom-num { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 800; color: #111; line-height: 1; flex-shrink: 0; text-align: right; }
 .viz-boom .boom-num span { font-size: 13px; display: block; font-weight: 700; margin-top: 2px; font-family: 'Inter', sans-serif; }
 
-/* ── HIGHLIGHT BOX ── */
-.highlight {
-  border-left: 3px solid var(--red);
-  padding: 16px 18px;
-  background: var(--red-dim);
-  margin: 20px 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: #f5c0c0;
-  line-height: 1.6;
-}
+/* HIGHLIGHT BOX */
+.highlight { border-left: 3px solid var(--red); padding: 16px 18px; background: var(--red-dim); margin: 20px 0; font-size: 15px; font-weight: 600; color: #f5c0c0; line-height: 1.6; }
 .highlight strong { color: #fff; }
-
-.highlight.green {
-  border-left-color: var(--green);
-  background: var(--green-dim);
-  color: #bbf7d0;
-}
+.highlight.green { border-left-color: var(--green); background: var(--green-dim); color: #bbf7d0; }
 .highlight.green strong { color: #fff; }
-
-.highlight.yellow {
-  border-left-color: var(--yellow);
-  background: #1c1400;
-  color: #fef08a;
-}
+.highlight.yellow { border-left-color: var(--yellow); background: #1c1400; color: #fef08a; }
 .highlight.yellow strong { color: #fff; }
 
-/* ── COMPARISON TABLE ── */
-.comp {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 22px 0;
-  font-size: 14px;
-}
+/* COMPARISON TABLE */
+.comp { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 14px; }
 .comp thead tr { border-bottom: 2px solid #fff; }
-.comp th {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 10px 12px 10px 0;
-  color: var(--muted);
-  text-align: left;
-}
+.comp th { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 12px 10px 0; color: var(--muted); text-align: left; }
 .comp th:not(:first-child) { text-align: center; padding: 10px 8px; }
-.comp td {
-  padding: 14px 12px 14px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
-  color: #aaa;
-  vertical-align: top;
-  line-height: 1.5;
-}
+.comp td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: #aaa; vertical-align: top; line-height: 1.5; }
 .comp td:not(:first-child) { text-align: center; padding: 14px 8px; }
 .comp tr:last-child td { border-bottom: none; }
 .comp .rlabel { font-size: 13px; color: var(--muted); }
@@ -402,7 +310,7 @@ body {
 .comp .good { color: var(--green); font-weight: 700; }
 .comp tr:nth-child(even) td { background: var(--surface); }
 
-/* ── PULL STAT ── */
+/* PULL STAT */
 .pull-stat { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--yellow); padding: 24px 22px 0; margin: 24px 0; overflow: hidden; }
 .ps-label { font-size: 13px; font-weight: 600; color: var(--muted); line-height: 1.5; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.06em; }
 .ps-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; }
@@ -413,156 +321,44 @@ body {
 .ps-unit { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); display: block; }
 .ps-boom { background: var(--red); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 22px; margin: 0 -22px; line-height: 1.5; }
 
-/* ── STATS ROW ── */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin: 24px 0;
-}
-.stat-box {
-  background: var(--surface);
-  padding: 22px 12px 18px;
-  text-align: center;
-}
-.stat-box .sn {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(26px, 5vw, 38px);
-  font-weight: 800;
-  color: var(--red);
-  display: block;
-  line-height: 1;
-  
-}
-.stat-box .sl {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: block;
-  margin-top: 7px;
-}
+/* STATS ROW */
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 24px 0; }
+.stat-box { background: var(--surface); padding: 22px 12px 18px; text-align: center; }
+.stat-box .sn { font-family: 'Oswald', sans-serif; font-size: clamp(26px, 5vw, 38px); font-weight: 800; color: var(--red); display: block; line-height: 1; }
+.stat-box .sl { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 7px; }
 
-/* ── QUALIFY ── */
-.qualify {
-  padding: 44px 20px;
-}
-.qualify h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(22px, 4vw, 28px);
-  font-weight: 800;
-  color: #fff;
-  
-  margin-bottom: 24px;
-  line-height: 1.2;
-}
-.check-row {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 16px;
-  color: #bbb;
-  line-height: 1.6;
-}
+/* QUALIFY */
+.qualify { padding: 44px 20px; }
+.qualify h3 { font-family: 'Oswald', sans-serif; font-size: clamp(22px, 4vw, 28px); font-weight: 800; color: #fff; margin-bottom: 24px; line-height: 1.2; }
+.check-row { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: #bbb; line-height: 1.6; }
 .check-row:last-child { border-bottom: none; }
-.check-icon {
-  width: 28px; height: 28px;
-  background: var(--green);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 900; color: #fff;
-  flex-shrink: 0; margin-top: 2px;
-}
+.check-icon { width: 28px; height: 28px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #fff; flex-shrink: 0; margin-top: 2px; }
 .check-row strong { color: #fff; font-weight: 600; }
 
-/* ── FINAL CTA ── */
-.final {
-  background: var(--surface);
-  border-top: 3px solid var(--red);
-  padding: 60px 20px 72px;
-}
-.final .inner {
-  max-width: 660px;
-  margin: 0 auto;
-  text-align: center;
-}
-.final .over {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-.final h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(26px, 5vw, 44px);
-  font-weight: 800;
-  color: #fff;
-  
-  line-height: 1.15;
-  margin-bottom: 14px;
-}
-.final .sub {
-  font-size: 17px;
-  color: #888;
-  line-height: 1.65;
-  margin-bottom: 36px;
-}
-
-.outcome-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 36px;
-  text-align: left;
-}
-.oc {
-  padding: 20px 18px;
-  font-size: 15px;
-  line-height: 1.6;
-  font-weight: 500;
-}
-.oc .ol {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 8px;
-}
+/* FINAL CTA */
+.final { background: var(--surface); border-top: 3px solid var(--red); padding: 60px 20px 72px; }
+.final .inner { max-width: 660px; margin: 0 auto; text-align: center; }
+.final .over { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.final h2 { font-family: 'Oswald', sans-serif; font-size: clamp(26px, 5vw, 44px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px; }
+.final .sub { font-size: 17px; color: #888; line-height: 1.65; margin-bottom: 36px; }
+.outcome-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; text-align: left; }
+.oc { padding: 20px 18px; font-size: 15px; line-height: 1.6; font-weight: 500; }
+.oc .ol { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 8px; }
 .oc.worst { background: var(--red-dim); color: #f5c0c0; border: 1px solid #7f1d1d; }
 .oc.worst .ol { color: #f87171; }
 .oc.best { background: var(--green-dim); color: #bbf7d0; border: 1px solid #14532d; }
 .oc.best .ol { color: var(--green); }
-
 .final .cta-btn { font-size: 20px; padding: 22px 32px; }
 .final .cta-sub-row { color: #555; }
 .final .cta-sub-row span::before { color: #4ade80; }
-
-.final-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 48px;
-}
+.final-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
 .final-stats .stat-box { background: #111; }
 .final-stats .stat-box .sn { color: var(--yellow); }
 
-/* ── DISCLAIMER ── */
-.disclaimer {
-  background: #0a0a0a;
-  padding: 20px;
-  font-size: 11px;
-  color: #444;
-  text-align: center;
-  line-height: 1.7;
-}
+/* DISCLAIMER */
+.disclaimer { background: #0a0a0a; padding: 20px; font-size: 11px; color: #444; text-align: center; line-height: 1.7; }
 
-/* ── REVEAL ── */
+/* REVEAL */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
@@ -593,11 +389,12 @@ body {
   <p class="hero-sub">Most Americans with $10,000+ in debt are playing by rules written by the banks — <strong>for the banks.</strong> Here's what they're hiding, and what you can do about it right now.</p>
 </div>
 
-<div style="padding: 0 20px; max-width: 660px; margin: 0 auto;">
-<img src="https://raw.githubusercontent.com/griffendea/landers/refs/heads/main/past-due.png" alt="Past due bill" style="width:100%; display:block;">
+<!-- PAST DUE IMAGE -->
+<div style="max-width: 660px; margin: 0 auto; padding: 0 20px;">
+  <img src="https://raw.githubusercontent.com/griffendea/domain1-landers/main/past-due.png" alt="Past due bill" style="width: 100%; display: block;">
 </div>
 
-<!-- ═══ ITEM 1 ═══ -->
+<!-- ITEM 1 -->
 <div class="item reveal">
   <div class="item-counter-row">
     <div class="item-num">01 of 07</div>
@@ -607,8 +404,6 @@ body {
   <div class="item-body">
     <p>I paid <strong>$847 a month for three years straight.</strong> Never missed once. You know how much my balance went down? <strong>$1,200. Total. In three years.</strong></p>
     <p>Out of every $847 I paid, only $175 was touching my actual balance. The other $672 went straight to the bank — every single month. More than I spend on gas and groceries combined. That's when it hit me: I wasn't paying off my debt. I was making a credit card company rich.</p>
-    <p>The banks designed it this way — on purpose.</p>
-
     <div class="viz">
       <div class="viz-label-row">Where your $847 monthly payment actually goes</div>
       <div class="viz-row">
@@ -628,34 +423,31 @@ body {
         <div class="viz-note">More than most people spend on gas <em>and</em> groceries combined — every single month</div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- ═══ ITEM 2 ═══ -->
+<!-- ITEM 2 -->
 <div class="item reveal">
   <div class="item-counter-row">
     <div class="item-num">02 of 07</div>
     <div class="item-counter-line"></div>
   </div>
-  <h2>Big Banks Would Rather Take 40 Cents on the Dollar Now Than Risk <em>Non-Payment Later</em></h2>
+  <h2>Big Banks Would Rather Settle for 40 Cents on the Dollar Now Than Risk <em>Non-Payment Later</em></h2>
   <div class="item-body">
-    <p>Here's what nobody explains: credit card companies already lose billions every year from people who simply can't pay. They know the math better than you do.</p>
-    <p>So when a professional negotiator shows up with real money on the table, Chase or Capital One will often settle for 40–60 cents on the dollar rather than risk getting nothing at all.</p>
-    <div class="highlight green">
-      <strong>This is legal, regulated, and has been happening since 2002.</strong> It's not a loophole — it's a negotiation process the banks hate but cannot stop. The law is on your side.
+    <p>Here's what nobody explains: credit card companies already lose billions every year from people who simply can't pay. They've built that loss into their business model.</p>
+    <p>So when a professional negotiator shows up with real money on the table, most major credit card issuers — Chase, Capital One, Discover, Amex, and the rest — will often settle for 40–60 cents on the dollar — and in some cases, even less — rather than risk getting nothing at all.</p>
+    <div class="highlight green" style="font-size: 18px; line-height: 1.65;">
+      <strong>This is legal, regulated, and has been happening since 2002.</strong> It's not a loophole — it's a regulated negotiation process that has quietly wiped billions off American credit card balances. The banks despise it. But they can't stop it.
     </div>
-    <p>They'd rather get something now than gamble on your ability to keep paying for the next two decades.</p>
   </div>
 </div>
 
 <!-- CTA AFTER ITEM 2 -->
 <div class="cta-wrap reveal">
-  <a href="https://thedebthelp.com/click" class="cta-btn">SEE IF YOU QUALIFY<span style="display:block; font-size:0.8em; font-weight:700; opacity:0.9; margin-top:4px;">FREE 60-SECOND CHECK →</span></a>
-  
+  <a href="https://path.thedebthelp.com/click" class="cta-btn">See If You Can Get Up To 80% Of Your Debt Erased →</a>
 </div>
 
-<!-- ═══ ITEM 3 ═══ -->
+<!-- ITEM 3 -->
 <div class="item reveal">
   <div class="item-counter-row">
     <div class="item-num">03 of 07</div>
@@ -679,7 +471,7 @@ body {
   </div>
 </div>
 
-<!-- ═══ ITEM 4 ═══ -->
+<!-- ITEM 4 -->
 <div class="item reveal">
   <div class="item-counter-row">
     <div class="item-num">04 of 07</div>
@@ -709,11 +501,10 @@ body {
 
 <!-- MID CTA -->
 <div class="cta-wrap reveal" style="padding-top:0;">
-  <a href="https://thedebthelp.com/click" class="cta-btn">Check My Eligibility — It's Free →</a>
-  
+  <a href="https://path.thedebthelp.com/click" class="cta-btn">Stop Burning $600 a Month — Check Now, It's Free!</a>
 </div>
 
-<!-- ═══ ITEM 5 ═══ -->
+<!-- ITEM 5 -->
 <div class="item reveal">
   <div class="item-counter-row">
     <div class="item-num">05 of 07</div>
@@ -730,7 +521,7 @@ body {
   </div>
 </div>
 
-<!-- ═══ ITEM 6 ═══ -->
+<!-- ITEM 6 -->
 <div class="item reveal">
   <div class="item-counter-row">
     <div class="item-num">06 of 07</div>
@@ -748,7 +539,7 @@ body {
   </div>
 </div>
 
-<!-- ═══ ITEM 7 ═══ -->
+<!-- ITEM 7 -->
 <div class="item reveal" style="border-bottom:none; padding-bottom: 0;">
   <div class="item-counter-row">
     <div class="item-num gold">07 of 07</div>
@@ -792,9 +583,8 @@ body {
 </div>
 
 <!-- HARD CLOSE CTA -->
-<div class="item reveal" style="border-bottom:none; background: var(--surface); border-top: 3px solid var(--red); padding-top: 40px; padding-bottom: 48px; margin-top: 32px; margin-bottom: 32px;">
-  <a href="https://thedebthelp.com/click" class="cta-btn" style="font-size:20px; padding: 22px 32px;">YES! Show Me How Much I Can Save — Free 60-Second Check →</a>
-  
+<div class="item reveal" style="border-bottom:none; background: var(--surface); border-top: 3px solid var(--red); padding-top: 40px; padding-bottom: 48px; margin-top: 48px; margin-bottom: 48px;">
+  <a href="https://path.thedebthelp.com/click" class="cta-btn" style="font-size:20px; padding: 22px 32px;">YES! Show Me How Much I Can Save<span style="display:block; font-size:13px; font-weight:600; letter-spacing:0.08em; margin-top:6px; opacity:0.85;">FREE 60-SECOND CHECK</span></a>
   <div class="stats-row" style="margin-top: 32px;">
     <div class="stat-box" style="background:#111;"><span class="sn" style="color:var(--yellow);">$19B+</span><span class="sl">Debt Resolved</span></div>
     <div class="stat-box" style="background:#111;"><span class="sn" style="color:var(--yellow);">1M+</span><span class="sl">Clients Served</span></div>
@@ -810,6 +600,7 @@ body {
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const now = new Date();
 document.getElementById('current-month').textContent = months[now.getMonth()] + ' ' + now.getFullYear();
+
 const io = new IntersectionObserver(e => {
   e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
 }, { threshold: 0.06 });
