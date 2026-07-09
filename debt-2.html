@@ -586,17 +586,14 @@ body {
 
 <div class="topbar">🔴 &nbsp;Financial Alert — Government-Regulated Debt Relief Program 2026</div>
 
-<div class="site-header">
-  <div class="site-logo">Finance<span>Freedom</span>Family</div>
-  <div class="site-tag">Personal Finance · Debt · Retirement</div>
-</div>
-
 <!-- HERO -->
 <div class="hero reveal">
-  <div class="hero-eyebrow">Debt Relief · Updated January 2026</div>
+  <div class="hero-eyebrow">Debt Relief · Updated <span id="current-month"></span></div>
   <h1><span class="num">7</span> Things Your Credit Card Company Is Praying You <em>Never</em> Find Out</h1>
   <p class="hero-sub">Most Americans with $10,000+ in debt are playing by rules written by the banks — <strong>for the banks.</strong> Here's what they're hiding, and what you can do about it right now.</p>
 </div>
+
+<img src="https://raw.githubusercontent.com/griffendea/landers/refs/heads/main/past-due.png" alt="Past due bill" style="width:100%; display:block; max-width:660px; margin: 0 auto;">
 
 <!-- ═══ ITEM 1 ═══ -->
 <div class="item reveal">
@@ -653,7 +650,7 @@ body {
 
 <!-- CTA AFTER ITEM 2 -->
 <div class="cta-wrap reveal">
-  <a href="https://path.godebthelp.com/click" class="cta-btn">See If You Qualify — Free 60-Second Check →</a>
+  <a href="https://thedebthelp.com/click" class="cta-btn">See If You Qualify — Free 60-Second Check →</a>
   <div class="cta-sub-row">
     <span>100% Free</span><span>No Obligation</span>
   </div>
@@ -713,7 +710,7 @@ body {
 
 <!-- MID CTA -->
 <div class="cta-wrap reveal" style="padding-top:0;">
-  <a href="https://path.godebthelp.com/click" class="cta-btn">Check My Eligibility — It's Free →</a>
+  <a href="https://thedebthelp.com/click" class="cta-btn">Check My Eligibility — It's Free →</a>
   <div class="cta-sub-row">
     <span>No Signup Required</span><span>Creditors Never Notified</span><span>Zero Risk</span>
   </div>
@@ -799,7 +796,7 @@ body {
 
 <!-- HARD CLOSE CTA -->
 <div class="item reveal" style="border-bottom:none; background: var(--surface); border-top: 3px solid var(--red); padding-top: 40px; padding-bottom: 48px; margin-top: 32px; margin-bottom: 32px;">
-  <a href="https://path.godebthelp.com/click" class="cta-btn" style="font-size:20px; padding: 22px 32px;">YES! Show Me How Much I Can Save — Free 60-Second Check →</a>
+  <a href="https://thedebthelp.com/click" class="cta-btn" style="font-size:20px; padding: 22px 32px;">YES! Show Me How Much I Can Save — Free 60-Second Check →</a>
   <div class="cta-sub-row" style="margin-top: 14px;">
     <span>100% Free</span><span>No Signup</span><span>Creditors Not Notified</span>
   </div>
@@ -815,6 +812,9 @@ body {
 </div>
 
 <script>
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const now = new Date();
+document.getElementById('current-month').textContent = months[now.getMonth()] + ' ' + now.getFullYear();
 const io = new IntersectionObserver(e => {
   e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
 }, { threshold: 0.06 });
