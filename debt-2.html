@@ -167,15 +167,20 @@ body {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.01em;
-  padding: 20px 28px;
-  border: none;
+  padding: 24px 28px;
+  border: 2px solid rgba(255,255,255,0.25);
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  box-shadow: 0 4px 28px rgba(239, 68, 68, 0.45);
 }
-.cta-btn:hover { background: #dc2626; }
+.cta-btn:hover {
+  background: #dc2626;
+  box-shadow: 0 6px 36px rgba(239, 68, 68, 0.65);
+  transform: translateY(-1px);
+}
 .cta-btn:active { transform: scale(0.99); }
 .cta-sub-row {
   display: flex;
