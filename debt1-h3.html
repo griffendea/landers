@@ -624,6 +624,26 @@ const vizIO = new IntersectionObserver(e => {
 }, { threshold: 0.3 });
 const vb = document.querySelector('.viz');
 if (vb) vizIO.observe(vb);
+
+// Forward tracking params (clickid, sub1-sub12, utm_*, etc.) from the
+// lander's URL onto every CTA offer link, so RedTrack can attribute the
+// click on the offer side instead of seeing an empty clickid.
+(function forwardTrackingParams() {
+  const incomingParams = new URLSearchParams(window.location.search);
+  if ([...incomingParams].length === 0) return;
+
+  document.querySelectorAll('a.cta-btn[href]').forEach(link => {
+    try {
+      const url = new URL(link.getAttribute('href'), window.location.href);
+      incomingParams.forEach((value, key) => {
+        url.searchParams.set(key, value);
+      });
+      link.setAttribute('href', url.toString());
+    } catch (e) {
+      // leave the link untouched if it's not a valid absolute URL
+    }
+  });
+})();
 </script>
 </body>
 </html>
